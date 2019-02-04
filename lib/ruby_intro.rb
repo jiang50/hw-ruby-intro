@@ -4,14 +4,29 @@
 
 def sum arr
   # YOUR CODE HERE
+  arr.inject(0, :+)
 end
 
 def max_2_sum arr
   # YOUR CODE HERE
+  if arr.size() == 0
+    return 0
+  else
+    arr.max(2).inject(:+)
+  end
 end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  set = Set.new
+  arr.each do |item|
+    if set.include?(n - item)
+      return true
+    else
+      set.add(item)
+    end
+  end
+  return false
 end
 
 # Part 2
